@@ -15,7 +15,7 @@ FROM nginx:alpine
 RUN rm -rf /usr/share/nginx/html
 RUN mkdir /usr/share/nginx/html
 COPY --from=build-stage /src/build/ /usr/share/nginx/html/
-#COPY default.conf /etc/nginx/conf.d/
+COPY default.conf /etc/nginx/conf.d/
 
 EXPOSE 80
 
