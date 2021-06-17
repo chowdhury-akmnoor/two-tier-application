@@ -11,7 +11,7 @@ COPY ./package* ./
 RUN npm install
 RUN yarn build
 
-FROM nginx:latest
+FROM nginx:alpine
 RUN rm -rf /usr/share/nginx/html
 RUN mkdir /usr/share/nginx/html
 COPY --from=build-stage /src/build/ /usr/share/nginx/html/
